@@ -1,6 +1,20 @@
 # Time-bomb-for-slack
 enjoy with Slack's api, chat.scheduleMessage, etc
 
+## 目標
+Cloudflare等を用いて、特定のコマンドをSlackに入力するとBotと会話形式でリマインダーを設定できるようにすること。
+
+## 概要（現状）
+cheap_bomb_creater.pyにて、利用予定のSlack Web APIのいくつかのmethodの動作確認をしました。
+cheap_bomb_creater.pyでは<br>
+"リマインダー"等のテキストを特定チャンネルで発言した後、<br>
+・リマインダーを流したいチャンネルID<br>
+・リマインダーのテキスト<br>
+・リマインダーを流したい時刻のUnixtime<br>
+を順番に書き込むことで、cheap_bomb_creater.py実行時にそのテキストの並びを見つけてリマンインダーを作成してくれます。<br>
+エラーが起きた時やキャンセルと書きこまれた時の動作もしておらず、Unixtimeで時間指定させる等利用者のことを全く考えてない雑なバージョンです。<br>
+
+
 ## python-slack-sdk
 
 https://github.com/slackapi/python-slack-sdk
